@@ -2,6 +2,7 @@
 from flask import Flask, request, session, g, redirect, url_for, \
      abort, render_template, flash
 import requests
+import json
 
 #config
 DEBUG = True
@@ -18,7 +19,8 @@ def search():
 	keyword = request.args.get('keywords')
 	postcode = request.args.get('postcode')
 	r = requests.request('GET', "http://api.lmiforall.org.uk/api/v1/vacancies/search?", params={'keywords':keyword, 'postcode':postcode})
-	return (r.content)
+	data = json.loads(r.content)
+	return render_template('search.html', results=data)
 
 #creating the index page
 @app.route('/', methods=['GET'])
