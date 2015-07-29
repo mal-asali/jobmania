@@ -1,18 +1,19 @@
 <html>
 <head>
-	<title>Jobmania - Search</title>
+	<title>Jobmania - Job Info</title>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="../static/style.css" media="screen" />
 </head>
 <body>
 	<a href="/">
 	<img src='http://i.imgur.com/OX7lYnC.png' class="logo"/>
+	<p>Job Title: {{job.title}}</p>
+	<p>Job Summary: {{job.summary}}</p>
+	<p>Company: {{job.company}}</p>
+	<p>City: {{job.location.city}}</p>
+	<p>Area: {{job.location.area}}</p>
+	<p>Postcode: {{job.location.postcode}}</p>
+	<p>Country: {{job.location.country}}</p>
 	</a>
-	<ul>
-		{% for result in results %}
-		<li><a href='/job/{{result.id}}'}>{{result.title}}</a></li>
-		{% endfor %}
-	</ul>
 </body>
-
 </html>

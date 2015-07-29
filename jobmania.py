@@ -27,6 +27,13 @@ def search():
 def index():
 	return render_template('index.html')
 
+#creating the job page
+@app.route('/job/<int:job_id>', methods=['GET'])
+def job(job_id):
+	r = requests.request('GET', "http://api.lmiforall.org.uk/api/v1/vacancies/search?", params={'keywords':job_id})
+	data = json.loads(r.content)
+	return render_template('job.html', job=data[0])
+
 #starting the server
 if __name__ == ('__main__'):
     app.run()

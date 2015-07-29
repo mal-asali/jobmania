@@ -1,0 +1,19 @@
+img.logo{
+    margin: 0 auto;
+    display: block;
+    }
+body{
+    font-family: 'Roboto Slab', serif;
+    background-color:white;
+    font-size: 25px;
+    margin:0;
+}
+
+input{
+    font-size: 25px;
+}
+p {
+    text-align:center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
