@@ -1,18 +1,25 @@
 <html>
 <head>
     <title>Jobmania</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,400' rel='stylesheet' type='text/css'>
 <style>
 
-img{
+img.logo{
     margin: 0 auto;
     display: block;
+    border:2px solid #ccc;
+    border-top:0;
+    border-radius:0 0 15px 15px;
+    box-shadow:0 10px 10px rgba(0,0,0,0.3);
 }
 body{
+    font-family: 'Roboto Slab', serif;
     background-color:white;
     background-image:url(background-cogs.png);
     font-size: 25px;
-
+    margin:0;
 }
+
 input{
     font-size: 25px;
 }
@@ -24,7 +31,7 @@ p {
 </style>
 </head>
   <body>
-    <img src='http://i.imgur.com/OX7lYnC.png'/>
+    <img src='http://i.imgur.com/OX7lYnC.png' class="logo"/>
     
     <p>Jobmania is a website that provides jobs for anybody. You can apply to any job according to your choice.We support giving anybody jobs from big to small.There is a large variety of them to choose from so that you can easily find the one that you are looking for. </p>
     <form action="/search">
