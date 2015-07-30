@@ -5,8 +5,8 @@ import requests
 import json
 
 #config
-DEBUG = True
-SECRET_KEY = 'development key'
+DEBUG = False
+SECRET_KEY = 'Claire'
 
 #creating the application
 app = Flask(__name__)

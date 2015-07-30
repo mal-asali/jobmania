@@ -9,7 +9,7 @@
     <img src='http://i.imgur.com/OX7lYnC.png' class="logo"/>
     </a>
     
-    <p>Jobmania is a website that provides jobs for anybody. You can apply to any job according to your choice. We support giving anybody jobs from big to small. There is a large variety of them to choose from so that you can easily find the one that you are looking for. </p>
+    <p>Jobmania is a website that provides jobs for anybody. You can apply to any job according to your choice.We support giving anybody jobs from big to small.There is a large variety of them to choose from so that you can easily find the one that you are looking for. </p>
     <form id="js-form" action="search">
         <input type="text" name="postcode" placeholder="Postcode" id="js-postcode-validate">
         <input type="text" name="keywords" placeholder="Keywords" id="js-keyword-validate">
@@ -19,45 +19,36 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-   
     function checkPostcode(postcode) {
-        if (postcode.length > 0){
+        if (postcode.length > 0) {
             $.ajax({
                 url: 'https://api.postcodes.io/postcodes/' + postcode + '/validate',
                 success: function (data) {
-                    if (data.result == false){
+                    if (data.result == false) {
                         $('#validation').text('Please enter a valid postcode')
                         return false;
-                    } else if (data.result ==true){
+                    } else if (data.result ==true) {
                         checkKeyword()
                     }
-
-
                 }
             })
-
         } else {
             checkKeyword()
         }
-   
     }
 
     function checkKeyword() {
         var keyword = $('#js-keyword-validate').val()
-        if (keyword.length > 0){
+        if (keyword.length > 0) {
             $('#js-form').trigger('submit')
         } else {
             $('#validation').text('Please enter a keyword.')
-        }
-        
+        }   
     }
 
-    $('#submit-button').click(function (e) {
-        e.preventDefault();
+    $('#submit-button').click(function (event) {
+        event.preventDefault();
         checkPostcode($('#js-postcode-validate').val())
     });
-
 </script>
-
-
 </html>
